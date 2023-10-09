@@ -105,7 +105,7 @@
 }
 .nav-btn {
   text-decoration: none;
-  background-color:#272727;
+  background: none;
   color: rgb(255, 253, 253);
   border: none;
   cursor: pointer;
@@ -115,7 +115,6 @@
   /* color: rgb(255, 253, 253); */
   color: gold;
   cursor: pointer;
-  border-radius: 100%;
 }
 .body{
   background-color: rgb(21, 21, 21);
@@ -132,4 +131,16 @@
 }
 .search-bar:focus{
   box-shadow: none !important;
+}
+
+.mr-1 {
+  margin-right: 12px !important;
+}
+
+.ml-1 {
+  margin-left: 12px !important;
+}
+
+.mt-1{
+  margin-top: 12px !important;
 }

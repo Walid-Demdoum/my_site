@@ -2,30 +2,139 @@
 {% load static %}
 
 {% block content %}
-  <div class="col">
-    <div class="card shadow-sm">
-      <img class="bd-placeholder-img card-img-top image-card" width="100%" height="225" src="{{ car.image }}" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="true" />
-      <title>{{ car.name }}</title>
-      <div class="card-body">
-        <p class="card-text">{{ car.name }} {{ car.model_car }}</p>
-        {% if car.boite %}
-          <span class="badge-cust">{{ car.get_boite_display }}</span>
-        {% endif %}
-        {% if car.energy %}
-          <span class="badge-cust">{{ car.get_energy_display }}</span>
-        {% endif %}
-        {% if car.color %}
-          <span class="badge-cust">{{ car.color }}</span>
-        {% endif %}
-        <p class="card-text" style="font-weight: bold;color: gold;">{{ car.price }} DZD</p>
-        <hr rold="separator" />
-        <div class="d-flex justify-content-between align-items-center">
-          <div class="btn-group">
-            <form method="get" action="{% url 'detail' car.id %}">
-              <button type="submit" class="btn btn-sm btn-outline-secondary card-btn">Details</button>
-            </form>
+  <div class="container detail-containter">
+    <strong><h3 class="detail-title">{{ car.name }} {{ car.model_car }}</h3></strong>
+    <div class="row g-3">
+      <div class="col">
+        <img class="img" src="{{ car.image }}" />
+      </div>
+      <div class="col">
+        <img class="img" src="{{ car.image }}" />
+      </div>
+      <div class="col">
+        <img class="img" src="{{ car.image }}" />
+      </div>
+    </div>
+    <div class="btn-group">
+      <form action="" method="get">
+        <button class="nav-btn mr-1"><i class="fa-regular fa-bookmark"></i></button>
+      </form>
+      <form action="" method="get">
+        <button class="nav-btn mr-1"><i class="fa-regular fa-heart"></i></button>
+      </form>
+      <form action="" method="get">
+        <button class="nav-btn mr-1"><i class="fa-solid fa-flag"></i></button>
+      </form>
+      <form action="" method="get">
+        <button class="nav-btn mr-1"><i class="fa-solid fa-share-nodes"></i></button>
+      </form>
+    </div>
+    <div class="btn-group float-right">
+      <form action="" method="get">
+        <button class="btn btn-primary ml-1 btn-detail"><i class="fa-regular fa-message mr-1 text-align-center"></i>Message</button>
+      </form>
+      <form action="" method="get">
+        <button class="btn btn-primary ml-1 btn-detail"><i class="fa-solid fa-phone mr-1 text-align-center" style="font-weight: bold;"></i>Appeler</button>
+      </form>
+    </div>
+  </div>
+  <div class="title-text container mt-5">
+    <a><i class="fa-regular fa-file-lines mr-1 desc"></i>Description de vehicule</a>
+  </div>
+
+  <div class="container detail-containter">
+    <div class="row g-3">
+      <div class="col">
+        <table class="table info-table">
+          <tr>
+            <td>Numéro</td>
+            <td>{{ car.phone_number }}</td>
+          </tr>
+          <tr>
+            <td>Date</td>
+            <td>{{ car.year }}</td>
+          </tr>
+          <tr>
+            <td>Vues</td>
+            <td>99</td>
+          </tr>
+          <tr>
+            <td>Boite</td>
+            <td>{{ car.get_boite_display }}</td>
+          </tr>
+          <tr>
+            <td>Finition</td>
+            <td>Sport</td>
+          </tr>
+          <tr>
+            <td>Modèle</td>
+            <td>{{ car.model_car }}</td>
+          </tr>
+          <tr>
+            <td>Marque</td>
+            <td>{{ car.name }}</td>
+          </tr>
+          <tr>
+            <td>Energie</td>
+            <td>{{ car.get_energy_display }}</td>
+          </tr>
+          <tr>
+            <td>Couleur</td>
+            <td>{{ car.color }}</td>
+          </tr>
+          <tr>
+            <td>Moteur</td>
+            <td>N/A</td>
+          </tr>
+          <tr>
+            <td>Kilométrage</td>
+            <td>N/A</td>
+          </tr>
+          <tr>
+            <td>Année</td>
+            <td>{{ car.year }}</td>
+          </tr>
+        </table>
+      </div>
+      <div class="col">
+        <div class="title-text container ml-1">
+          <a><i class="fa-regular fa-file-lines mr-1 desc"></i>Contact & Coordonnés</a>
+          <div class="contact">
+            <table class="table table-contact">
+              <tr>
+                <td><i class="fa-solid fa-user"></i></td>
+                <td>Username</td>
+              </tr>
+              <tr>
+                <td><i class="fa-solid fa-location-dot"></i></td>
+                <td>Cité 1100 logements Batiment T cage N⁰03 Porte N⁰06,Bouira</td>
+              </tr>
+              <tr>
+                <td><i class="fa-solid fa-phone"></i></td>
+                <td>
+                  <form action="" method="get">
+                    <button class="btn ml-1 btn-detail btn-contact">+213779675028</button>
+                  </form>
+                </td>
+              </tr>
+              <tr>
+                <td><i class="fa-solid fa-message"></i></td>
+                <td>
+                  <form action="" method="get">
+                    <button class="btn ml-1 btn-detail btn-contact">+Message</button>
+                  </form>
+                </td>
+              </tr>
+            </table>
           </div>
-          <small class="text-body-primary">{{ car.year }}</small>
+        </div>
+        <div class="title-text container ml-1">
+          {% if car.description %}
+          <a>Description</a>
+          <div class="contact">
+            <p class="mt-2 ml-1 mr-1">{{car.description}}</p>
+          </div>
+          {% endif %}
         </div>
       </div>
     </div>
