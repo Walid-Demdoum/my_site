@@ -1,0 +1,24 @@
+.card {
+    height: 340px !important;
+    background-color: #2e2e2e !important;
+    color: aliceblue !important;
+}
+
+.card-btn {
+    background-color: whitesmoke !important;
+    color: black !important;
+    font-weight: bold !important;
+}
+
+.card-btn:hover {
+    background-color: gold !important;
+    color: black !important;
+}
+
+.badge-cust {
+    border-radius: 12px;
+    font-size: 12px;
+    background-color: #515151;
+    font-weight: bold;
+    padding: 2px 5px 2px 5px ;
+}

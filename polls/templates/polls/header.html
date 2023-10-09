@@ -1,0 +1,69 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="auto">
+  <head>
+    <title>ShopyCar</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="{% static 'main/css/headers.css' %}" />
+    <link rel="stylesheet" href="{% static 'main/css/body.css' %}" />
+    <link rel="stylesheet" href="{% static 'main/font_awsome_v6/css/all.css' %}" />
+    <link rel="stylesheet" href="{% static 'main/bootstrap/dist/css/bootstrap.min.css' %}" />
+    <link rel="shortcut icon" type="image/png" href="{% static 'images/favicon.png' %}" />
+    <script src="{% static 'main/bootstrap/dist/js/bootstrap.bundle.min.js' %}"></script>
+  </head>
+  <body class="body">
+    <main>
+    
+      <nav class="shadow mb-15 py-2 navbar">{% comment %} ##################################### START OF NAVBAR {% endcomment %}
+        <div class="container">{% comment %} ##################################### START OF NAVBAR CONTAINER {% endcomment %}
+          
+            
+          <ul class="nav">{% comment %} ##################################### START OF LOGO {% endcomment %}
+            <a href="{% url 'index'%}"><li><img src="{% static 'main/images/logo_yellow.png' %}" alt="Logo" class="logo" /></li></a>
+          </ul>{% comment %} ##################################### END OF LOGO {% endcomment %}
+          
+          
+          <form class="col-12 col-lg-auto mb-3 mb-lg-0 me-lg-3" role="search">{% comment %} ##################################### START OF search-bar {% endcomment %}
+            <input type="search" class="form-control search-bar" placeholder="Search..." aria-label="Search">
+          </form> {% comment %} ##################################### END OF search-bar {% endcomment %}
+          
+          <div class="row justify-content-end">{% comment %} ##################################### START OF LEFT-BUTTONS {% endcomment %}
+            
+            <div class="col-auto">{% comment %} ######BTN ADD {% endcomment %}
+                <a href="http://192.168.5.17:8000/admin/polls/vehicle/add/" class="link-body-emphasis text-decoration-none">
+                    <button name="add" class="nav-btn"><i class="fa-solid fa-square-plus"></i></button>
+                </a>
+            </div>{% comment %} ######BTN ADD {% endcomment %}
+            
+            <div class="col-auto">{% comment %} ######BTN CART {% endcomment %}
+                <a href="" class="link-body-emphasis text-decoration-none">
+                    <button name="cart" class="nav-btn" type="submit" href=""><i class="fa-solid fa-cart-shopping"></i></button>
+                </a>
+            </div>{% comment %} ######BTN CART {% endcomment %}
+
+            <div class="dropdown col-auto btn-group" >{% comment %} ######BTN DROPDOWN {% endcomment %}
+                <a href="#?" class="link-body-emphasis text-decoration-none" data-bs-toggle="dropdown" aria-expanded="false">
+                    <button name="main" class="nav-btn" type="button" href=""><i class="fa fa-list"></i></button>
+                </a>
+                <ul class="dropdown-menu text-small">
+                    <li><a class="dropdown-item" href=""><i class="fa fa-user"></i> LogIn</a></li>
+                    <li><a class="dropdown-item" href="admin/"><i class="fa fa-tools"></i> Settings</a></li>
+                    <li><hr class="dropdown-divider"></li>
+                    <li><a class="dropdown-item" href=""><i class="fa fa-warning"></i> Sign out</a></li>
+                </ul>
+            </div>{% comment %} ######BTN DROPDOWN {% endcomment %}
+
+          </div>{% comment %} ##################################### START OF LEFT-BUTTONS {% endcomment %}
+          
+        </div>{% comment %} ##################################### END OF NAVBAR CONTAINER {% endcomment %}
+      </nav>{% comment %} ##################################### END OF NAVBAR {% endcomment %}
+    
+    </main>
+    <div class="content">
+      {% block content %}
+
+      {% endblock %}
+    </div>
+  </body>
+</html>
