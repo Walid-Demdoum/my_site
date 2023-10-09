@@ -4,15 +4,35 @@
 {% block content %}
   <div class="container detail-containter">
     <strong><h3 class="detail-title">{{ car.name }} {{ car.model_car }}</h3></strong>
-    <div class="row g-3">
+    <div class="row">
       <div class="col">
-        <img class="img" src="{{ car.image }}" />
-      </div>
-      <div class="col">
-        <img class="img" src="{{ car.image }}" />
-      </div>
-      <div class="col">
-        <img class="img" src="{{ car.image }}" />
+        <div class="featured-carousel owl-carousel">
+          <div class="item">
+            <div class="img">
+              <img src="{{ car.image }}" class="img" />
+            </div>
+          </div>
+          <div class="item">
+            <div class="img">
+              <img src="{{ car.image }}" class="img" />
+            </div>
+          </div>
+          <div class="item">
+            <div class="img">
+              <img src="{{ car.image }}" class="img" />
+            </div>
+          </div>
+          <div class="item">
+            <div class="img">
+              <img src="{{ car.image }}" class="img" />
+            </div>
+          </div>
+          <div class="item">
+            <div class="img">
+              <img src="{{ car.image }}" class="img" />
+            </div>
+          </div>
+        </div>
       </div>
     </div>
     <div class="btn-group">
@@ -130,13 +150,17 @@
         </div>
         <div class="title-text container ml-1">
           {% if car.description %}
-          <a>Description</a>
-          <div class="contact">
-            <p class="mt-2 ml-1 mr-1">{{car.description}}</p>
-          </div>
+            <a>Description</a>
+            <div class="contact">
+              <p class="mt-2 ml-1 mr-1">{{ car.description }}</p>
+            </div>
           {% endif %}
         </div>
       </div>
     </div>
   </div>
+
+  <script src="{% static 'main/carousel/js/jquery.min.js' %}"></script>
+  <script src="{% static 'main/carousel/js/owl.carousel.min.js' %}"></script>
+  <script src="{% static 'main/carousel/js/main.js' %}"></script>
 {% endblock %}
