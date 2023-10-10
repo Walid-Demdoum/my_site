@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="{% static 'main/css/headers.css' %}" />
     <link rel="stylesheet" href="{% static 'main/css/body.css' %}" />
     <link rel="stylesheet" href="{% static 'main/css/detail.css' %}" />
+    <link rel="stylesheet" href="{% static 'main/css/login.css' %}" />
     <link rel="stylesheet" href="{% static 'main/font_awsome_v6/css/all.css' %}" />
     <link rel="stylesheet" href="{% static 'main/bootstrap/dist/css/bootstrap.min.css' %}" />
 	  <link rel="stylesheet" href="{%static 'main/carousel/css/owl.carousel.min.css'%}">
@@ -31,12 +32,14 @@
           </form> {% comment %} ##################################### END OF search-bar {% endcomment %}
           
           <div class="row justify-content-end">{% comment %} ##################################### START OF LEFT-BUTTONS {% endcomment %}
-            
+            {% if user.is_authenticated%}
             <div class="col-auto">{% comment %} ######BTN ADD {% endcomment %}
-                <a href="http://192.168.5.17:8000/admin/polls/vehicle/add/" class="link-body-emphasis text-decoration-none">
-                    <button name="add" class="nav-btn"><i class="fa-solid fa-square-plus"></i></button>
-                </a>
+              <a href="http://192.168.5.17:8000/admin/polls/vehicle/add/" class="link-body-emphasis text-decoration-none">
+                  <button name="add" class="nav-btn"><i class="fa-solid fa-square-plus"></i></button>
+              </a>
             </div>{% comment %} ######BTN ADD {% endcomment %}
+            {% endif %}
+            
             
             <div class="col-auto">{% comment %} ######BTN CART {% endcomment %}
                 <a href="" class="link-body-emphasis text-decoration-none">
@@ -44,17 +47,24 @@
                 </a>
             </div>{% comment %} ######BTN CART {% endcomment %}
 
+            {% if user.is_authenticated%}
             <div class="dropdown col-auto btn-group" >{% comment %} ######BTN DROPDOWN {% endcomment %}
                 <a href="#?" class="link-body-emphasis text-decoration-none" data-bs-toggle="dropdown" aria-expanded="false">
                     <button name="main" class="nav-btn" type="button" href=""><i class="fa fa-list"></i></button>
                 </a>
                 <ul class="dropdown-menu text-small">
-                    <li><a class="dropdown-item" href=""><i class="fa fa-user"></i> LogIn</a></li>
-                    <li><a class="dropdown-item" href="admin/"><i class="fa fa-tools"></i> Settings</a></li>
+                    <li><a class="dropdown-item" href="admin/"><i class="fa fa-tools"></i> Paramètres</a></li>
                     <li><hr class="dropdown-divider"></li>
-                    <li><a class="dropdown-item" href=""><i class="fa fa-warning"></i> Sign out</a></li>
+                    <li><a class="dropdown-item" href="{% url 'logout'%}"><i class="fa-solid fa-arrow-right-from-bracket"></i> Se déconnecter</a></li>
                 </ul>
             </div>{% comment %} ######BTN DROPDOWN {% endcomment %}
+            {% else %}
+            <div class="dropdown col-auto btn-group" >{% comment %} ######BTN DROPDOWN {% endcomment %}
+              <a href="{% url 'login'%}" class="link-body-emphasis text-decoration-none nav-btn">
+                <button name="main" class="nav-btn" type="submit" ><i class="fa fa-user"></i></button>
+              </a>
+            </div>
+            {%endif%}
 
           </div>{% comment %} ##################################### START OF LEFT-BUTTONS {% endcomment %}
           

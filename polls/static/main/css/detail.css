@@ -53,6 +53,7 @@
     color: aliceblue !important;
     font-size: medium;
     font-weight: bold;
+    border-bottom: 1px solid #2f2f2f !important;
 }
 .contact{
     border: 2px solid gold;
