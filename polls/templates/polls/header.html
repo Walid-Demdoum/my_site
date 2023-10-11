@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="{% static 'main/css/body.css' %}" />
     <link rel="stylesheet" href="{% static 'main/css/detail.css' %}" />
     <link rel="stylesheet" href="{% static 'main/css/login.css' %}" />
+    <link rel="stylesheet" href="{% static 'main/css/vehicleForm.css' %}" />
     <link rel="stylesheet" href="{% static 'main/font_awsome_v6/css/all.css' %}" />
     <link rel="stylesheet" href="{% static 'main/bootstrap/dist/css/bootstrap.min.css' %}" />
 	  <link rel="stylesheet" href="{%static 'main/carousel/css/owl.carousel.min.css'%}">
@@ -34,7 +35,7 @@
           <div class="row justify-content-end">{% comment %} ##################################### START OF LEFT-BUTTONS {% endcomment %}
             {% if user.is_authenticated%}
             <div class="col-auto">{% comment %} ######BTN ADD {% endcomment %}
-              <a href="http://192.168.5.17:8000/admin/polls/vehicle/add/" class="link-body-emphasis text-decoration-none">
+              <a href="{% url "vehicleForm" %}" class="link-body-emphasis text-decoration-none">
                   <button name="add" class="nav-btn"><i class="fa-solid fa-square-plus"></i></button>
               </a>
             </div>{% comment %} ######BTN ADD {% endcomment %}

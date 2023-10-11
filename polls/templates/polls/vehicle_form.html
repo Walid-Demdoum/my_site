@@ -1,0 +1,133 @@
+{% extends 'polls/header.html' %}
+
+{% block content %}
+  {% load static %}
+  {% if user.is_authenticated %}
+    <section>
+      <div id="content-start" class="content" tabindex="-1">
+        <!-- Content -->
+        <div id="content-main" class="container container-vf">
+          <h3 class="text-gold">Ajouter votre vehicule</h3>
+          <form method="POST" id="vehicle_form" enctype="multipart/form-data">
+            {% csrf_token %}
+            <div>
+              <fieldset class="module aligned text-white">
+                <div class="form-row field-name">
+                  <div>
+                    <div class="flex-container">
+                      <label class="required" for="id_name">Marque&nbsp;:</label>
+                      <input type="text" name="name" class="vTextField" maxlength="255" required="" id="id_name" />
+                    </div>
+                  </div>
+                </div>
+
+                <div class="form-row field-model_car">
+                  <div>
+                    <div class="flex-container">
+                      <label class="required" for="id_model_car">Model&nbsp;:</label>
+                      <input type="text" name="model_car" class="vTextField" maxlength="255" required="" id="id_model_car" />
+                    </div>
+                  </div>
+                </div>
+
+                <div class="form-row field-phone_number">
+                  <div>
+                    <div class="flex-container">
+                      <label for="id_phone_number">Téléphone&nbsp;:</label>
+                      <input type="text" name="phone_number" value="+213779675028" class="vTextField" maxlength="255" id="id_phone_number" />
+                    </div>
+                  </div>
+                </div>
+
+                <div class="form-row field-year">
+                  <div>
+                    <div class="flex-container">
+                      <label class="required" for="id_year">Année&nbsp;:</label>
+                      <input type="number" name="year" value="2000" class="vIntegerField" required="" id="id_year" />
+                    </div>
+                  </div>
+                </div>
+
+                <div class="form-row field-boite">
+                  <div>
+                    <div class="flex-container">
+                      <label class="required" for="id_boite">Boite de vitesse&nbsp;:</label>
+
+                      <select name="boite" id="id_boite">
+                        <option value="au">Automatique</option>
+                        <option value="ma" selected="">Manuel</option>
+                      </select>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="form-row field-energy">
+                  <div>
+                    <div class="flex-container">
+                      <label class="required" for="id_energy">Energie&nbsp;:</label>
+
+                      <select name="energy" id="id_energy">
+                        <option value="essence" selected="">Essence</option>
+                        <option value="diesel">Diesel</option>
+                        <option value="gpl">GPL</option>
+                      </select>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="form-row field-description">
+                  <div>
+                    <div class="flex-container">
+                      <label for="id_description">Description&nbsp;:</label>
+                      <textarea name="description" cols="40" rows="10" class="vLargeTextField" maxlength="1024" id="id_description"></textarea>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="form-row field-color">
+                  <div>
+                    <div class="flex-container">
+                      <label for="id_color">Coleur&nbsp;:</label>
+                      <input type="text" name="color" class="vTextField" maxlength="255" id="id_color" />
+                    </div>
+                  </div>
+                </div>
+
+                <div class="form-row field-horse_power">
+                  <div>
+                    <div class="flex-container">
+                      <label for="id_horse_power">Puissance&nbsp;:</label>
+                      <input type="text" name="horse_power" class="vTextField" maxlength="255" id="id_horse_power" />
+                    </div>
+                  </div>
+                </div>
+
+                <div class="form-row field-image">
+                  <div>
+                    <div class="flex-container">
+                      <label class="required" for="id_image">Image&nbsp;:</label>
+                      <input type="file" name="image" accept="image/*" required="" id="id_image" />
+                    </div>
+                  </div>
+                </div>
+
+                <div class="form-row field-price">
+                  <div>
+                    <div class="flex-container">
+                      <label for="id_price">Prix&nbsp;:</label>
+                      <input type="number" name="price" value="1.0" step="0.01" id="id_price" />
+                    </div>
+                  </div>
+                </div>
+              </fieldset>
+              <input type="submit" value="Enregistrer" class="btn btn-primary mt-2 mb-2" name="_save" />
+            </div>
+          </form>
+        </div>
+        <!-- END Content -->
+      </div>
+    </section>
+  {% else %}
+  
+  {% endif %}
+{% endblock %}

@@ -1,17 +1,16 @@
 .card {
-    height: 340px !important;
     background-color: #2e2e2e !important;
-    color: aliceblue !important;
+    color: rgb(255, 255, 255) !important;
 }
 
 .card-btn {
-    background-color: whitesmoke !important;
+    background-color: gold !important;
     color: black !important;
     font-weight: bold !important;
 }
 
 .card-btn:hover {
-    background-color: gold !important;
+    background-color: rgba(255, 217, 0, 0.9) !important;
     color: black !important;
 }
 

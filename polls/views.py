@@ -1,28 +1,30 @@
 from django.shortcuts import render, redirect
-from django.http import HttpResponse,request,Http404
+from django.http import HttpResponse, request, Http404
 from django.template import loader
 from django.contrib.auth import login, authenticate, logout
 from django.contrib.auth.forms import AuthenticationForm
 from django.contrib import messages
 from .models import Vehicle
-from .forms import NewUserForm
+from .forms import NewUserForm, VehicleForm
 
 
 def index(request):
     vehicle_ids = Vehicle.objects.all()
     context = {
-        "vehicle_ids":vehicle_ids,
+        "vehicle_ids": vehicle_ids,
     }
     template = loader.get_template("polls/index.html")
-    return HttpResponse(template.render(context,request))
+    return HttpResponse(template.render(context, request))
+
 
 def detail(request, vehicle_id):
     vehicle = Vehicle.objects.get(pk=vehicle_id)
     context = {
-        "car":vehicle
+        "car": vehicle
     }
     template = loader.get_template("polls/detail.html")
-    return HttpResponse(template.render(context,request))
+    return HttpResponse(template.render(context, request))
+
 
 def register_request(request):
 	if request.method == "POST":
@@ -30,11 +32,12 @@ def register_request(request):
 		if form.is_valid():
 			user = form.save()
 			login(request, user)
-			messages.success(request, "Registration successful." )
+			messages.success(request, "Registration successful.")
 			return redirect("index")
 		messages.error(request, "Unsuccessful registration. Invalid information.")
 	form = NewUserForm()
-	return render (request=request, template_name="polls/register.html", context={"register_form":form})
+	return render(request=request, template_name="polls/register.html", context={"register_form": form})
+
 
 def login_request(request):
 	if request.method == "POST":
@@ -48,13 +51,25 @@ def login_request(request):
 				messages.info(request, f"You are now logged in as {username}.")
 				return redirect("index")
 			else:
-				messages.error(request,"Invalid username or password.")
+				messages.error(request, "Invalid username or password.")
 		else:
-			messages.error(request,"Invalid username or password.")
+			messages.error(request, "Invalid username or password.")
 	form = AuthenticationForm()
-	return render(request=request, template_name="polls/login.html", context={"login_form":form})
+	return render(request=request, template_name="polls/login.html", context={"login_form": form})
 
 def logout_request(request):
 	logout(request)
-	messages.info(request, "You have successfully logged out.") 
+	messages.info(request, "You have successfully logged out.")
 	return redirect("login")
+
+
+def vehicleForm(request):
+    if request.method == 'POST':
+        form = VehicleForm(request.POST, request.FILES)
+        if form.is_valid():
+            form.save()
+            return redirect('index')
+    else:
+        form = VehicleForm()
+    
+    return render(request, 'polls/vehicle_form.html', {'form': form})

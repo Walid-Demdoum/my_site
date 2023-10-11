@@ -1,0 +1,42 @@
+.vehicle-form label{
+    color:white !important;
+}
+.container-vf{
+    display: block !important;
+    width: 40% !important;
+    height: auto !important;
+    background-color: #272727;
+    border-radius: 15px;
+    padding: 5px 5px 5px 5px;
+}
+.module {
+    border: none;
+    margin-bottom: 30px;
+    background: var(--body-bg);
+}
+.form-row {
+    padding: 10px;
+    font-size: 1rem;
+    border-bottom: 1px solid #373737;
+}
+div {
+    display: block;
+}
+.flex-container {
+    display: flex;
+    flex-wrap: wrap;
+}
+.aligned label {
+    display: block;
+    padding: 4px 5px 0 0;
+    width: 100px;
+    word-wrap: break-word;
+    line-height: 1;
+}
+input[type=text], input[type=password], input[type=email], input[type=url], input[type=number], input[type=tel], textarea, select, .vTextField {
+    border: 1px solid var(--border-color);
+    border-radius: 4px;
+    padding: 5px 6px;
+    margin-top: 0;
+    color: black;
+}
