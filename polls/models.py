@@ -1,4 +1,5 @@
 from django.db import models
+from django.contrib.auth.models import User
 
 class Vehicle(models.Model):
     name = models.CharField("Marque",max_length=255)
@@ -12,6 +13,7 @@ class Vehicle(models.Model):
     horse_power = models.CharField("Puissance",max_length=255,default=None,blank=True)
     image = models.ImageField("Image")
     price = models.DecimalField("Prix",max_digits=16, decimal_places=2,blank=True,default=1.00)
+    user = models.ForeignKey(User, on_delete=models.CASCADE, verbose_name="User")
 
     def __str__(self):
         return self.name

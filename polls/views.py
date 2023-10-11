@@ -1,11 +1,13 @@
 from django.shortcuts import render, redirect
 from django.http import HttpResponse, request, Http404
 from django.template import loader
-from django.contrib.auth import login, authenticate, logout
+from django.contrib.auth import login, authenticate, logout,get_user
 from django.contrib.auth.forms import AuthenticationForm
 from django.contrib import messages
 from .models import Vehicle
 from .forms import NewUserForm, VehicleForm
+
+from django.contrib.auth.decorators import login_required
 
 
 def index(request):
@@ -62,14 +64,17 @@ def logout_request(request):
 	messages.info(request, "You have successfully logged out.")
 	return redirect("login")
 
-
 def vehicleForm(request):
-    if request.method == 'POST':
-        form = VehicleForm(request.POST, request.FILES)
-        if form.is_valid():
-            form.save()
-            return redirect('index')
-    else:
-        form = VehicleForm()
-    
-    return render(request, 'polls/vehicle_form.html', {'form': form})
+	if request.method == 'POST' :
+		form = VehicleForm(request.POST, request.FILES)
+		logged_user = get_user(request)
+		if form.is_valid():
+			vehicle = form.save(commit=False)
+			vehicle.user = logged_user
+			vehicle.save()
+			return redirect("index")
+		else :
+			messages.error(request, "Invalide informations.")
+	else:
+		form = VehicleForm()
+	return render(request, 'polls/vehicle_form.html', {'form': form})

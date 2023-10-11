@@ -23,4 +23,4 @@ class NewUserForm(UserCreationForm):
 class VehicleForm(forms.ModelForm):
     class Meta:
         model = Vehicle
-        fields = '__all__'
+        fields = ("name","model_car","phone_number","year","boite","energy","description","color","horse_power","image","price")
