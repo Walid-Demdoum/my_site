@@ -9,32 +9,41 @@
         <div class="featured-carousel owl-carousel">
           <div class="item">
             <div class="img">
-              <img src="{{ car.image }}" class="img" />
+              <img src="{{ car.image }}" class="img imageViewBig" />
             </div>
           </div>
           <div class="item">
             <div class="img">
-              <img src="{{ car.image }}" class="img" />
+              <img src="{{ car.image }}" class="img imageViewBig" />
             </div>
           </div>
           <div class="item">
             <div class="img">
-              <img src="{{ car.image }}" class="img" />
+              <img src="{{ car.image }}" class="img imageViewBig" />
             </div>
           </div>
           <div class="item">
             <div class="img">
-              <img src="{{ car.image }}" class="img" />
+              <img src="{{ car.image }}" class="img imageViewBig" />
             </div>
           </div>
           <div class="item">
             <div class="img">
-              <img src="{{ car.image }}" class="img" />
+              <img src="{{ car.image }}" class="img imageViewBig" />
             </div>
           </div>
         </div>
       </div>
     </div>
+    <div class="modal fade" id="modalImgageView" tabindex="-1" aria-hidden="true">
+      <div class="modal-dialog modal-lg">
+          <div class="modal-content">
+              <div class="modal-body text-center">
+                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close" style="position:absolute; top:5px;right:5px;"></button>
+                  <img src="" alt="Image Title" class="img-fluid" id="modalImgageViewIMG" style="width:100%;">
+              </div>
+          </div>
+      </div></div>
     <div class="btn-group">
       <form action="" method="get">
         <button class="nav-btn mr-1"><i class="fa-regular fa-bookmark"></i></button>
@@ -123,7 +132,7 @@
             <table class="table table-contact">
               <tr>
                 <td><i class="fa-solid fa-user"></i></td>
-                <td><button class="btn ml-1 btn-detail btn-contact" disabled>{{user.username}}</button></td>
+                <td><button class="btn ml-1 btn-detail btn-contact" disabled>{{car.user}}</button></td>
               </tr>
               <tr>
                 <td><i class="fa-solid fa-location-dot"></i></td>
@@ -163,4 +172,11 @@
   <script src="{% static 'main/carousel/js/jquery.min.js' %}"></script>
   <script src="{% static 'main/carousel/js/owl.carousel.min.js' %}"></script>
   <script src="{% static 'main/carousel/js/main.js' %}"></script>
+  <script>
+    $(document).on("click", ".imageViewBig", function() {
+      let url = $(this).attr('src');
+      $('#modalImgageViewIMG').attr('src', url);
+      $('#modalImgageView').modal('toggle');
+    });
+  </script>
 {% endblock %}

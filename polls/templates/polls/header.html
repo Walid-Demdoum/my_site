@@ -14,12 +14,15 @@
     <link rel="stylesheet" href="{% static 'main/bootstrap/dist/css/bootstrap.min.css' %}" />
 	  <link rel="stylesheet" href="{%static 'main/carousel/css/owl.carousel.min.css'%}">
     <link rel="shortcut icon" type="image/png" href="{% static 'images/favicon.png' %}" />
-    <script src="{% static 'main/bootstrap/dist/js/bootstrap.bundle.min.js' %}"></script>
+    <script language="JavaScript" type="text/javascript" src="{% static 'main/bootstrap/dist/js/bootstrap.bundle.min.js' %}"></script>
+    <script language="JavaScript" type="text/javascript" src="{% static 'main/js/header.js' %}"></script>
+    <script language="JavaScript" type="text/javascript" src="{% static 'main/js/jquery.js' %}"></script>
+
   </head>
   <body class="body">
     <main>
     
-      <nav class="shadow mb-15 py-2 navbar">{% comment %} ##################################### START OF NAVBAR {% endcomment %}
+      <header class="mb-15 py-2 navbar" id="header">{% comment %} ##################################### START OF NAVBAR {% endcomment %}
         <div class="container">{% comment %} ##################################### START OF NAVBAR CONTAINER {% endcomment %}
           
             
@@ -70,13 +73,111 @@
           </div>{% comment %} ##################################### START OF LEFT-BUTTONS {% endcomment %}
           
         </div>{% comment %} ##################################### END OF NAVBAR CONTAINER {% endcomment %}
-      </nav>{% comment %} ##################################### END OF NAVBAR {% endcomment %}
-    
+      </header>{% comment %} ##################################### END OF NAVBAR {% endcomment %}
     </main>
     <div class="content">
       {% block content %}
 
       {% endblock %}
+    </div>
+    <div class="mt-5">
+    <!-- Footer -->
+      <footer class="text-center text-lg-start" style="background-color: #ECEFF1">
+        <!-- Section: Social media -->
+        <section class="d-flex justify-content-between p-4 text-white section-footer">
+          <!-- Left -->
+          <div class="me-5">
+            <span><h5>Get connected with us on social networks:</h5></span>
+          </div>
+          <!-- Left -->
+
+          <!-- Right -->
+          <div>
+            <a href="https://facebook.com/waliddemdoum2" target="_blank" class="text-white me-4" style="text-decoration: none;">
+              <i class="fa-brands fa-facebook-f"></i>
+            </a>
+            <a href="https://twitter.com/OualidDemdoum" target="_blank" class="text-white me-4" style="text-decoration: none;">
+              <i class="fab fa-twitter"></i>
+            </a>
+            <a href="https://www.instagram.com/oualiddmd" target="_blank" class="text-white me-4" style="text-decoration: none;">
+              <i class="fab fa-instagram"></i>
+            </a>
+            <a href="https://www.linkedin.com/in/oualid-demdoum-047036233/" target="_blank" class="text-white me-4" style="text-decoration: none;">
+              <i class="fab fa-linkedin"></i>
+            </a>
+            <a href="https://github.com/Walid-Demdoum/" target="_blank" class="text-white me-4" style="text-decoration: none;">
+              <i class="fab fa-github"></i>
+            </a>
+          </div>
+          <!-- Right -->
+        </section>
+        <!-- Section: Social media -->
+
+        <!-- Section: Links  -->
+        <section class="section-footer-2">
+          <div class="text-center text-md-start">
+            <!-- Grid row -->
+            <div class="row" style="--bs-gutter-x:0;">
+              <!-- Grid column -->
+              <div class="col-md-3 col-lg-4 col-xl-3 mx-auto mb-4 my-4">
+                <!-- Content -->
+                <ul class="nav">{% comment %} ##################################### START OF LOGO {% endcomment %}
+                  <a href="{% url 'index'%}"><li><img src="{% static 'main/images/logo_yellow.png' %}" alt="Logo" class="logo" /></li></a>
+                </ul>{% comment %} ##################################### END OF LOGO {% endcomment %}
+                <p class="mt-5">
+                  Votre marchez ultime pour trouvez le vehicule qui vous correspond.
+                </p>
+                <p>
+                  L'utilisation de ce site Internet implique l'acceptation des Conditions générales et du règlement sur le Respect de la vie privée.
+                </p>
+              </div>
+              <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mb-4 my-4">
+                <!-- Links -->
+                <h6 class="text-uppercase fw-bold text-gold">Useful links</h6>
+                <hr class="mb-4 mt-0 d-inline-block mx-auto" style="width: 60px; background-color: #7c4dff; height: 2px"/>
+                <p>
+                  <a href="{% url "login" %}" class="text-dark">Se connectez</a>
+                </p>
+                <p>
+                  <a href="{% url "index" %}" class="text-dark">Show room</a>
+                </p>
+                <p>
+                  <a href="{% url "register" %}" class="text-dark">Inscription</a>
+                </p>
+                <p>
+                  <a href="#!" class="text-dark">Support</a>
+                </p>
+              </div>
+              <!-- Grid column -->
+
+              <!-- Grid column -->
+              <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4 my-4">
+                <!-- Links -->
+                <h6 class="text-uppercase fw-bold text-gold">Contact</h6>
+                <hr
+                    class="mb-4 mt-0 d-inline-block mx-auto"
+                    style="width: 60px; background-color: #7c4dff; height: 2px"
+                    />
+                <p><i class="fas fa-home mr-3"></i> City 1100, building T, block 03 door 03, Bouira, Algeria</p>
+                <p><i class="fas fa-envelope mr-3"></i> walid.demdoum@univ-constantine2.dz</p>
+                <p><i class="fas fa-phone mr-3"></i> + 213 779675028</p>
+                <p><i class="fas fa-print mr-3"></i> + 213 552282958</p>
+              </div>
+              <!-- Grid column -->
+            </div>
+            <!-- Grid row -->
+          </div>
+        </section>
+        <!-- Section: Links  -->
+
+        <!-- Copyright -->
+        <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2)">
+          © 2020 Copyright:
+          <a class="text-dark" href="http://192.168.5.17:8000/">ShopyCar.com</a>
+        </div>
+        <!-- Copyright -->
+      </footer>
+      <!-- Footer -->
     </div>
   </body>
 </html>

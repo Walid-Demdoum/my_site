@@ -6,38 +6,40 @@
       {% for car in vehicle_ids %}
         <div class="col">
           <div class="card">
-            <img class="bd-placeholder-img card-img-top image-card" width="100%" height="225" src="{{ car.image }}" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="true" />
-            <title>{{ car.name }}</title>
-            <div class="card-body">
-              <p class="card-text"><strong style="font-size:large;">{{ car.name }}</strong> {{ car.model_car }} {{car.year}}</p>
-              {% if car.boite %}
-                <span class="badge-cust">{{ car.get_boite_display }}</span>
-              {% endif %}
-              {% if car.energy %}
-                <span class="badge-cust">{{ car.get_energy_display }}</span>
-              {% endif %}
-              {% if car.color %}
-                <span class="badge-cust">{{ car.color }}</span>
-              {% endif %}
-              <p class="card-text" style="font-weight: bold;color: gold;">{{ car.price }} DZD</p>
-              <div class="adress">
-                <i class="fa-solid fa-location-dot"></i> Bouira,10
-              </div>
-              <div class="date">
-                <i class="fa-regular fa-clock"></i> 25 minutes
-              </div>
-              <div class="user">
-                <i class="fa-solid fa-user"></i> <strong>{{car.user}}</strong>
-              </div>
-              <hr role="separator" />
-              <div class="d-flex justify-content-between align-items-center">
-                <div class="btn-group">
-                  <form method="" action="{% url 'detail' car.id %}">
-                    <button type="submit" class="btn btn-sm card-btn gold-btn">Details</button>
-                  </form>
+            <a href="{%url 'detail' car.id%}" style="text-decoration: none;" class="text-white">
+              <img class="bd-placeholder-img card-img-top image-card" width="100%" height="225" src="{{ car.image }}" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="true" />
+              <title>{{ car.name }}</title>
+              <div class="card-body">
+                <p class="card-text"><strong style="font-size:large;">{{ car.name }}</strong> {{ car.model_car }} {{car.year}}</p>
+                {% if car.boite %}
+                  <span class="badge-cust">{{ car.get_boite_display }}</span>
+                {% endif %}
+                {% if car.energy %}
+                  <span class="badge-cust">{{ car.get_energy_display }}</span>
+                {% endif %}
+                {% if car.color %}
+                  <span class="badge-cust">{{ car.color }}</span>
+                {% endif %}
+                <p class="card-text" style="font-weight: bold;color: gold;">{{ car.price }} DZD</p>
+                <div class="adress">
+                  <i class="fa-solid fa-location-dot"></i> Bouira,10
+                </div>
+                <div class="date">
+                  <i class="fa-regular fa-clock"></i> 25 minutes
+                </div>
+                <div class="user">
+                  <i class="fa-solid fa-user"></i> <strong>{{car.user}}</strong>
+                </div>
+                <hr role="separator" />
+                <div class="d-flex justify-content-between align-items-center">
+                  <div class="btn-group">
+                    <form method="" action="{% url 'detail' car.id %}">
+                      <button type="submit" class="btn btn-sm card-btn gold-btn">Details</button>
+                    </form>
+                  </div>
                 </div>
               </div>
-            </div>
+            </a>
           </div>
         </div>
       {% endfor %}

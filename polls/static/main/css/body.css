@@ -1,6 +1,12 @@
 .card {
-    background-color: #2e2e2e !important;
+    /* background-color: #2e2e2e !important; */
+    background: linear-gradient(100.6deg, rgb(6, 125, 141) 11.2%, rgb(7, 57, 63) 91.1%); 
     color: rgb(255, 255, 255) !important;
+    border: none !important;
+    transition: all 0.3s;
+}
+.card:hover{
+    transform: scale(1.05);
 }
 
 .card-btn {

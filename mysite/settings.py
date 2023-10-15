@@ -37,6 +37,8 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'jquery',
+    'django_static_jquery',
     'polls.apps.PollsConfig',
     'crispy_forms',
     'crispy_bootstrap5',
