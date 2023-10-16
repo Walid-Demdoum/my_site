@@ -5,7 +5,7 @@
     border: none !important;
     transition: all 0.3s;
 }
-.card:hover{
+.card-car:hover{
     transform: scale(1.05);
 }
 

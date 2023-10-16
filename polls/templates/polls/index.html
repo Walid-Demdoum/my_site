@@ -5,7 +5,7 @@
     <div class="row row-cols-1 row-cols-sm-2 row-cols-md-4 g-4">
       {% for car in vehicle_ids %}
         <div class="col">
-          <div class="card">
+          <div class="card card-car">
             <a href="{%url 'detail' car.id%}" style="text-decoration: none;" class="text-white">
               <img class="bd-placeholder-img card-img-top image-card" width="100%" height="225" src="{{ car.image }}" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="true" />
               <title>{{ car.name }}</title>

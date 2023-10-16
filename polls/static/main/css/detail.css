@@ -11,6 +11,16 @@
     margin-bottom: 20px;
 }
 
+.detail-price {
+    font-weight: bold;
+    color: gold;
+    margin-bottom: 20px;
+}
+.description-title{
+    color: black;
+    text-decoration: none;
+    font-weight: bold;
+}
 .detail-containter {
     /* background-color: #272727; */
     background: linear-gradient(135.8deg, rgb(6, 125, 141) 27.1%, rgb(26, 26, 29) 77.5%);

@@ -37,13 +37,8 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'jquery',
-    'django_static_jquery',
     'polls.apps.PollsConfig',
-    'crispy_forms',
-    'crispy_bootstrap5',
 ]
-CRISPY_TEMPLATE_PACK = 'bootstrap5'
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',

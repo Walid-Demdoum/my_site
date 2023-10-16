@@ -4,6 +4,7 @@
 {% block content %}
   <div class="container detail-containter">
     <strong><h3 class="detail-title">{{ car.name }} {{ car.model_car }}</h3></strong>
+    <strong><h3 class="detail-price">{{ car.price }} DA</h3></strong>
     <div class="row">
       <div class="col">
         <div class="featured-carousel owl-carousel">
@@ -67,13 +68,12 @@
       </form>
     </div>
   </div>
-  <div class="title-text container mt-5">
-    <a><i class="fa-regular fa-file-lines mr-1 desc"></i>Description de vehicule</a>
-  </div>
-
   <div class="container detail-containter">
     <div class="row g-3">
       <div class="col">
+        <div class="title-text">
+          <a><i class="fa-regular fa-file-lines mr-1 desc"></i>Description de vehicule</a>
+        </div>
         <table class="table info-table">
           <tr>
             <td>Numéro</td>
