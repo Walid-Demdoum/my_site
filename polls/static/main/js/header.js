@@ -1,11 +1,15 @@
 document.addEventListener('DOMContentLoaded', function() {
-    const headerE1 = document.getElementById("header");
     window.addEventListener('scroll', () => {
         if (window.scrollY > 50) {
-            console.log(headerE1);
-            headerE1.classList.add('navbar-scrolled');
+            console.log(document.getElementById("header"));
+            document.getElementById("header").classList.add('navbar-scrolled');
         } else if (window.scrollY < 50) {
-            headerE1.classList.remove('navbar-scrolled');
+            document.getElementById("header").classList.remove('navbar-scrolled');
         }
     });
 });
+
+function search_bar_toglle(){
+    console.log(document.getElementById('search-bar'));
+    document.getElementById("search-bar").classList.add('hidden');
+}

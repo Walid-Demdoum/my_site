@@ -22,8 +22,8 @@
     font-weight: bold;
 }
 .detail-containter {
-    /* background-color: #272727; */
-    background: linear-gradient(135.8deg, rgb(6, 125, 141) 27.1%, rgb(26, 26, 29) 77.5%);
+    background-color: #272727;
+    /* background: linear-gradient(135.8deg, rgb(6, 125, 141) 27.1%, rgb(26, 26, 29) 77.5%); */
     padding: 20px;
     border-radius: 10px;
     margin-top: 20px;
@@ -31,7 +31,7 @@
 }
 
 .float-right {
-    float: right;
+    float: right !important;
 }
 .btn-detail{
     font-weight: bold !important;
@@ -43,6 +43,8 @@
     border: none !important;
     padding-top: 2px !important;
     padding-bottom: 2px !important;
+    text-align: initial !important;
+
 }
 .btn-contact:hover{
     background-color: greenyellow !important;
@@ -77,11 +79,9 @@
     border-bottom: 1px solid #2f2f2f5d !important;
 }
 .contact{
-    border: 2px solid gold;
     border-radius: 20px;
     margin-top: 15px;
     font-size: large;
-    background: linear-gradient(135.8deg, rgb(6, 125, 141) 27.1%, rgb(26, 26, 29) 77.5%);
 
 }
 .table-contact{

@@ -1,5 +1,8 @@
 {% extends 'polls/header.html' %}
 {% load static %}
+{% load socialaccount %}
+{% providers_media_js %}
+
 {% block content %}
   <body class="body-login">
     <section>
@@ -31,6 +34,7 @@
                     <button type="submit" class="btn btn-primary">Se connecter</button>
                   </div>
                 </form>
+                <a href=""><i class="fa-brands fa-google"></i></a>
               </div>
               <div class="card-footer py-3 border-0">
                 <div class="text-center">

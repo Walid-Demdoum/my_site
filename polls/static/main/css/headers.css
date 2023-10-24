@@ -20,11 +20,11 @@
   top: 0;
   left: 0;
   z-index: 1000;
-  background: linear-gradient(100.6deg, rgb(7, 57, 63) 11.2%, rgb(6, 125, 141) 91.1%) !important; 
+  background-color: #2a2a2a;
 
 }
 .navbar-scrolled{
-  background: linear-gradient(100.6deg, rgb(7, 57, 63, 0.5) 11.2%, rgb(6, 125, 141, 0.5) 91.1%) !important; 
+  background-color: #2a2a2ae9;
 }
 .logo{
   width: 150px;
@@ -47,14 +47,15 @@
   cursor: pointer;
 }
 .body{
-  background-image: url("https://www.transparenttextures.com/patterns/white-texture.png");
+  background-color: #1d1d1d;
 }
 .search-bar{
-  background-color: white;
-  border-color: white;
+  background-color: #414141 !important;
+  border: none !important;
   border-radius: 25px !important;
   width: 290px !important;
-  color: rgb(37, 10, 10) !important;
+  color: rgb(255 , 255, 255) !important;
+  visibility: hidden;
 }
 .search-bar::placeholder{
   color: rgb(136, 136, 136) !important;
@@ -75,10 +76,11 @@
   margin-top: 12px !important;
 }
 .text-gold{
-  color:gold !important;
+  color:rgb(255, 215, 0) !important;
 }
 .section-footer{
-  background: linear-gradient(100.6deg, rgb(6, 125, 141) 11.2%, rgb(7, 57, 63) 91.1%); 
+  background: linear-gradient(100.6deg, rgb(255, 215, 0) 11.2%, rgb(7, 57, 63) 91.1%); 
+  color: black;
 }
 .section-footer-2{
   /* background: radial-gradient(circle at 10% 20%, rgb(55, 55, 57) 0%, rgb(14, 19, 24) 81.3%); */
@@ -88,9 +90,16 @@
   linear-gradient(315deg, #1d1d1d 25%, transparent 25%),
   linear-gradient(45deg, #1d1d1d 25%, transparent 25%);
   background-size: 15px 15px;
-  background-color: #2a2a2a;
+  background-color: #000000;
   color: white;
 }
 .section-footer-2 a{
   color: white !important;
+}
+.hidden{
+  visibility: visible !important;
+}
+.buttom-footer{
+  background: linear-gradient(100.6deg, rgb(7, 57, 63) 11.2%, rgb(255, 215, 0) 91.1%); 
+  color: white;
 }
