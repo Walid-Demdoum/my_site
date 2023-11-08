@@ -20,11 +20,11 @@
   top: 0;
   left: 0;
   z-index: 1000;
-  background-color: #2a2a2a;
+  background-color: #2a384e00;
 
 }
 .navbar-scrolled{
-  background-color: #2a2a2ae9;
+  background-color: #183651;
 }
 .logo{
   width: 150px;
@@ -83,14 +83,7 @@
   color: black;
 }
 .section-footer-2{
-  /* background: radial-gradient(circle at 10% 20%, rgb(55, 55, 57) 0%, rgb(14, 19, 24) 81.3%); */
-  background:
-  linear-gradient(135deg, #1d1d1d 25%, transparent 25%) -50px 0,
-  linear-gradient(225deg, #1d1d1d 25%, transparent 25%) -50px 0,
-  linear-gradient(315deg, #1d1d1d 25%, transparent 25%),
-  linear-gradient(45deg, #1d1d1d 25%, transparent 25%);
-  background-size: 15px 15px;
-  background-color: #000000;
+  background-color: #183651;
   color: white;
 }
 .section-footer-2 a{

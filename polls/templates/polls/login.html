@@ -1,8 +1,6 @@
 {% extends 'polls/header.html' %}
 {% load static %}
 {% load socialaccount %}
-{% providers_media_js %}
-
 {% block content %}
   <body class="body-login">
     <section>
@@ -33,8 +31,9 @@
                   <div class="text-center">
                     <button type="submit" class="btn btn-primary">Se connecter</button>
                   </div>
+                  {% load socialaccount %}
                   <div class="text-center py-3">
-                    <a href="" style="text-decoration: none !important;" class="text-white text-center"><i class="fa-brands fa-google"></i>oogle</a>
+                    <a href="{% provider_login_url 'google' %}" style="text-decoration: none !important;" class="text-white text-center"><i class="fa-brands fa-google"></i>oogle</a>
                   </div>
                 </form>
               </div>
