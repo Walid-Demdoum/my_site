@@ -6,10 +6,10 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link rel="stylesheet" href="{% static 'main/css/headers.css' %}" />
-    <link rel="stylesheet" href="{% static 'main/css/body.css' %}" />
+    {% comment %} <link rel="stylesheet" href="{% static 'main/css/body.css' %}" />
     <link rel="stylesheet" href="{% static 'main/css/detail.css' %}" />
     <link rel="stylesheet" href="{% static 'main/css/login.css' %}" />
-    <link rel="stylesheet" href="{% static 'main/css/vehicleForm.css' %}" />
+    <link rel="stylesheet" href="{% static 'main/css/vehicleForm.css' %}" /> {% endcomment %}
     <link rel="stylesheet" href="{% static 'main/font_awsome_v6/css/all.css' %}" />
     <link rel="stylesheet" href="{% static 'main/bootstrap/dist/css/bootstrap.min.css' %}" />
     <link rel="stylesheet" href="{% static 'main/carousel/css/owl.carousel.min.css' %}" />
@@ -28,13 +28,12 @@
               </li>
             </a>
           </ul>
-
           <div class="row justify-content-end">
             <form class="col-12 col-lg-auto mb-3 mb-lg-0 me-lg-3" role="search">
               <input type="search" id="search-bar" class="form-control search-bar" placeholder="Search..." aria-label="Search" />
             </form>
             <div class="col-auto">
-              <button name="add" onclick="search_bar_toglle()" class="nav-btn" id="search-trigger"><i class="fa-solid fa-magnifying-glass"></i></button>
+              <button name="add" onclick="search_bar_toggle()" class="nav-btn" id="search-trigger"><i class="fa-solid fa-magnifying-glass"></i></button>
             </div>
             {% if user.is_authenticated %}
               <div class="col-auto">
@@ -69,21 +68,13 @@
         </div>
       </header>
     </main>
-    <div class="content">
       {% block content %}
 
       {% endblock %}
-    </div>
 
     <!-- Footer -->
-    <div class="mt-5">
-      <footer class="text-center text-lg-start buttom-footer">
-        <!-- Section: Social media -->
-        <section class="section-footer">
-          
-        </section>
-        <!-- Section: Social media -->
-
+    <div>
+      <footer class="text-center text-lg-start bottom-footer">
         <!-- Section: Links -->
         <section class="section-footer-2">
           <div class="text-center text-md-start">
@@ -99,13 +90,13 @@
                     </li>
                   </a>
                 </ul>
-                <p class="mt-5">Votre marchez ultime pour trouvez le vehicule qui vous correspond.</p>
-                <p>L'utilisation de ce site Internet implique l'acceptation des Conditions générales et du règlement sur le Respect de la vie privée.</p>
+                <p class="mt-5">Shopycar est une plateform en ligne destinée pour touts clien particulier ou proffessionel.Toute personne chercher a acheter ou vendre son vehicule ce trouve ici.</p>
+                <p>L'utilisation de ce site implique l'acceptation des Conditions générales et du règlement sur le Respect de la vie privée.</p>
               </div>
               <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mb-4 my-4">
                 <!-- Links -->
                 <h6 class="text-uppercase fw-bold text-gold">Useful links</h6>
-                <hr class="mb-4 mt-0 d-inline-block mx-auto" style="width: 60px; background-color: #7c4dff; height: 2px" />
+                <hr class="mb-4 mt-0 d-inline-block mx-auto" style="width: 60px; height: 2px" />
                 <p>
                   <a href="{% url 'login' %}">Se connectez</a>
                 </p>
@@ -125,7 +116,7 @@
               <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4 my-4">
                 <!-- Links -->
                 <h6 class="text-uppercase fw-bold text-gold">Contact</h6>
-                <hr class="mb-4 mt-0 d-inline-block mx-auto" style="width: 60px; background-color: #7c4dff; height: 2px" />
+                <hr class="mb-4 mt-0 d-inline-block mx-auto" style="width: 60px; height: 2px" />
                 <p>
                   <i class="fas fa-home mr-3"></i> City 1100, building T, block 03 door 03, Bouira, Algeria
                 </p>

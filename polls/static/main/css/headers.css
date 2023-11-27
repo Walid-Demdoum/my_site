@@ -1,6 +1,3 @@
-.text-small {
-  font-size: 85%;
-}
 .bd-placeholder-img {
   font-size: 1.125rem;
   text-anchor: middle;
@@ -20,13 +17,12 @@
   top: 0;
   left: 0;
   z-index: 1000;
-  background-color: #2a384e00;
-
+  background-color: #1d1d1d00;
 }
-.navbar-scrolled{
-  background-color: #183651;
+.navbar-scrolled {
+  background-color: #1d1d1d;
 }
-.logo{
+.logo {
   width: 150px;
   height: 30px;
 }
@@ -41,26 +37,23 @@
   cursor: pointer;
   font-size: 25px;
 }
+
 .nav-btn:hover {
-  /* color: rgb(255, 253, 253); */
   color: gold;
-  cursor: pointer;
 }
-.body{
-  background-color: #1d1d1d;
-}
-.search-bar{
-  background-color: #414141 !important;
+
+.search-bar {
   border: none !important;
   border-radius: 25px !important;
   width: 290px !important;
-  color: rgb(255 , 255, 255) !important;
+  color: rgb(17, 17, 17) !important;
   visibility: hidden;
 }
-.search-bar::placeholder{
+
+.search-bar::placeholder {
   color: rgb(136, 136, 136) !important;
 }
-.search-bar:focus{
+.search-bar:focus {
   box-shadow: none !important;
 }
 
@@ -72,27 +65,22 @@
   margin-left: 12px !important;
 }
 
-.mt-1{
+.mt-1 {
   margin-top: 12px !important;
 }
-.text-gold{
-  color:rgb(255, 215, 0) !important;
+.text-gold {
+  color: rgb(255, 215, 0) !important;
 }
-.section-footer{
-  background: linear-gradient(100.6deg, rgb(255, 215, 0) 11.2%, rgb(7, 57, 63) 91.1%); 
-  color: black;
-}
-.section-footer-2{
-  background-color: #183651;
+.section-footer-2 {
   color: white;
+  background-color: #1d1d1d;
 }
-.section-footer-2 a{
+.section-footer-2 a {
   color: white !important;
 }
-.hidden{
+.hidden {
   visibility: visible !important;
 }
-.buttom-footer{
-  background: linear-gradient(100.6deg, rgb(7, 57, 63) 11.2%, rgb(255, 215, 0) 91.1%); 
-  color: white;
+.text-white {
+  color: white !important;
 }

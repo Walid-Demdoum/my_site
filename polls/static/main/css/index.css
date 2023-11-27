@@ -5,7 +5,7 @@
     border: none !important;
     transition: all 0.3s;
     height: auto !important;
-    background-color: #2a2a2a !important;
+    background-color: #183651 !important;
 }
 .card-car:hover{
     transform: scale(1.05);

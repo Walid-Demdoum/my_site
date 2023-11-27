@@ -8,6 +8,6 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 });
 
-function search_bar_toglle(){
-    document.getElementById("search-bar").classList.add('hidden');
+function search_bar_toggle(){
+    document.getElementById("search-bar").classList.toggle('hidden');
 }
